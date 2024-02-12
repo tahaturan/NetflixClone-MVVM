@@ -22,6 +22,7 @@
 		5FB689022B79BC5E00BBD98D /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB689012B79BC5E00BBD98D /* MainTabbarController.swift */; };
 		5FB689062B79C61400BBD98D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB689052B79C61400BBD98D /* DiscoverViewController.swift */; };
 		5FB689092B79C6DE00BBD98D /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB689082B79C6DE00BBD98D /* AppIcon.swift */; };
+		5FB6890C2B79CEA200BBD98D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5FB6890B2B79CEA200BBD98D /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB6890C2B79CEA200BBD98D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +323,9 @@
 			dependencies = (
 			);
 			name = "NetflixClone-MVVM";
+			packageProductDependencies = (
+				5FB6890B2B79CEA200BBD98D /* SnapKit */,
+			);
 			productName = "NetflixClone-MVVM";
 			productReference = 5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -393,6 +398,9 @@
 				Base,
 			);
 			mainGroup = 5FB688AA2B79BA1400BBD98D;
+			packageReferences = (
+				5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 5FB688B42B79BA1400BBD98D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -781,6 +789,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5FB6890B2B79CEA200BBD98D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5FB688AB2B79BA1400BBD98D /* Project object */;
 }
