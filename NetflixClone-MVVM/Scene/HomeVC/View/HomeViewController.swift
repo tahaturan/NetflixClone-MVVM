@@ -82,6 +82,7 @@ extension HomeViewController {
         
         tableView.register(MovieCollectionViewTableViewCell.self, forCellReuseIdentifier: MovieCollectionViewTableViewCell.identifier)
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         headerCollectionView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height * 0.4)
         tableView.tableHeaderView = headerCollectionView
     }
