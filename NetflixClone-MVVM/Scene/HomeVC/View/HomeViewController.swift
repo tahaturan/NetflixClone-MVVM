@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     // MARK: - Properties
-
+    private var tableViewTopConstraint: Constraint?
     // MARK: - UICompenents
 
     private lazy var backroundImageView: UIImageView = {
@@ -70,7 +70,7 @@ extension HomeViewController {
             make.width.height.equalTo(AppSize.searchButton.size().width)
         }
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            tableViewTopConstraint = make.top.equalTo(titleLabel.snp.bottom).offset(20).constraint
             make.leading.equalToSuperview().inset(10)
             make.trailing.bottom.equalToSuperview()
         }
@@ -122,6 +122,25 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return view.bounds.height * 0.05
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let hideThreshold: CGFloat = 100
+        if scrollView.contentOffset.y > hideThreshold {
+            UIView.animate(withDuration: 1) {
+                self.titleLabel.alpha = 0
+                self.searchButton.alpha = 0
+                self.tableViewTopConstraint?.update(offset: -20)
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 1) {
+                self.titleLabel.alpha = 1
+                self.searchButton.alpha = 1
+                self.tableViewTopConstraint?.update(offset: 20)
+                self.view.layoutIfNeeded()
+            }
+        }
     }
 }
 //MARK: - UICollectionView Delegate/DataSource
