@@ -15,7 +15,7 @@ final class NetworkCaller: NetworkServiceProtocol {
     
     func fetchData<T:Codable>(_ endPoint: EndPoint, completion: @escaping (Result<T,NetworkError>) -> Void) {
         let task = URLSession.shared.dataTask(with: endPoint.request()) { data, response, error in
-            if let error = error {
+            if let _ = error {
                 completion(.failure(.unableToComplateError))
             }
             
@@ -33,5 +33,6 @@ final class NetworkCaller: NetworkServiceProtocol {
                 completion(.failure(.decodingError))
             }
         }
+        task.resume()
     }
 }

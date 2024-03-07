@@ -17,7 +17,7 @@ protocol EndPointProtocol {
     func movieApiURL() -> String
     func request() -> URLRequest
 }
-enum NetworkError: Error {
+enum NetworkError: String, Error {
     case invalidURL
     case canNotProcessData
     case unknownError
@@ -54,17 +54,17 @@ enum EndPoint {
 
 extension EndPoint: EndPointProtocol {
     var baseURL: String {
-        return "https://api.themoviedb.org/3/movie/"
+        return "https://api.themoviedb.org"
     }
     
     var genreURL: String {
         switch self {
         case .popular:
-            return "popular"
+            return "/3/movie/popular"
         case .topRated:
-            return "top_rated"
+            return "/3/movie/top_rated"
         case .upComing:
-            return "upcoming"
+            return "/3/movie/upcoming"
         }
     }
     
