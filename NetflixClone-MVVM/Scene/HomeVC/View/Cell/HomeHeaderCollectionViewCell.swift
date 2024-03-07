@@ -43,7 +43,9 @@ class HomeHeaderCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    func configureCell(movie: MovieResult) {
+        
+    }
     private func addGradient() {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.clear.cgColor, UIColor.viewBackround.cgColor]

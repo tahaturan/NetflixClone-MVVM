@@ -11,6 +11,12 @@
 		5F0777D62B95772D00FBA7E2 /* Screen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777D52B95772D00FBA7E2 /* Screen+Extension.swift */; };
 		5F0777D82B9642A400FBA7E2 /* HomeHeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777D72B9642A400FBA7E2 /* HomeHeroHeaderView.swift */; };
 		5F0777DA2B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777D92B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift */; };
+		5F0777DC2B98146300FBA7E2 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777DB2B98146300FBA7E2 /* NetworkConstants.swift */; };
+		5F0777DE2B98187A00FBA7E2 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777DD2B98187A00FBA7E2 /* NetworkCaller.swift */; };
+		5F0777E02B981DEE00FBA7E2 /* HomeViewModelContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777DF2B981DEE00FBA7E2 /* HomeViewModelContracts.swift */; };
+		5F0777E22B981F3800FBA7E2 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E12B981F3800FBA7E2 /* MovieModel.swift */; };
+		5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */; };
+		5F0777E62B99606E00FBA7E2 /* HomeViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E52B99606E00FBA7E2 /* HomeViewBuilder.swift */; };
 		5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D352B8C0A340004354D /* AppSearchButton.swift */; };
 		5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */; };
 		5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB688B62B79BA1400BBD98D /* AppDelegate.swift */; };
@@ -53,6 +59,12 @@
 		5F0777D52B95772D00FBA7E2 /* Screen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screen+Extension.swift"; sourceTree = "<group>"; };
 		5F0777D72B9642A400FBA7E2 /* HomeHeroHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeroHeaderView.swift; sourceTree = "<group>"; };
 		5F0777D92B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F0777DB2B98146300FBA7E2 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		5F0777DD2B98187A00FBA7E2 /* NetworkCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
+		5F0777DF2B981DEE00FBA7E2 /* HomeViewModelContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelContracts.swift; sourceTree = "<group>"; };
+		5F0777E12B981F3800FBA7E2 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderFooterView.swift; sourceTree = "<group>"; };
+		5F0777E52B99606E00FBA7E2 /* HomeViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewBuilder.swift; sourceTree = "<group>"; };
 		5F4B7D352B8C0A340004354D /* AppSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchButton.swift; sourceTree = "<group>"; };
 		5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,9 +117,7 @@
 		5F4B7D342B8C0A190004354D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5F4B7D392B8C150A0004354D /* Cell */,
 				5F4B7D352B8C0A340004354D /* AppSearchButton.swift */,
-				5F0777D72B9642A400FBA7E2 /* HomeHeroHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +127,8 @@
 			children = (
 				5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */,
 				5F0777D92B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift */,
+				5F0777D72B9642A400FBA7E2 /* HomeHeroHeaderView.swift */,
+				5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -144,11 +156,12 @@
 		5FB688B52B79BA1400BBD98D /* NetflixClone-MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				5F4B7D342B8C0A190004354D /* Views */,
 				5FB688E82B79BAA300BBD98D /* Manager */,
 				5FB688E92B79BAB800BBD98D /* Service */,
 				5FB688EA2B79BABF00BBD98D /* Model */,
 				5FB688ED2B79BAE400BBD98D /* Scene */,
+				5FB689012B79BC5E00BBD98D /* MainTabbarController.swift */,
+				5F4B7D342B8C0A190004354D /* Views */,
 				5FB688EB2B79BAC900BBD98D /* Utils */,
 				5FB688E72B79BA9600BBD98D /* Resorces */,
 				5FB688E62B79BA7F00BBD98D /* Support */,
@@ -202,6 +215,8 @@
 		5FB688E92B79BAB800BBD98D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5F0777DB2B98146300FBA7E2 /* NetworkConstants.swift */,
+				5F0777DD2B98187A00FBA7E2 /* NetworkCaller.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -209,6 +224,7 @@
 		5FB688EA2B79BABF00BBD98D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F0777E12B981F3800FBA7E2 /* MovieModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,11 +249,10 @@
 		5FB688ED2B79BAE400BBD98D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				5FB689012B79BC5E00BBD98D /* MainTabbarController.swift */,
+				5FB688EE2B79BAEA00BBD98D /* HomeVC */,
 				5FB688F12B79BB0800BBD98D /* DownloadVC */,
 				5FB688F02B79BAFF00BBD98D /* SearchVC */,
 				5FB688EF2B79BAF200BBD98D /* UpComingVC */,
-				5FB688EE2B79BAEA00BBD98D /* HomeVC */,
 				5FB689032B79C5DA00BBD98D /* DiscoverVC */,
 			);
 			path = Scene;
@@ -279,7 +294,9 @@
 		5FB688F22B79BB3500BBD98D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5F4B7D392B8C150A0004354D /* Cell */,
 				5FB688F32B79BB4500BBD98D /* HomeViewController.swift */,
+				5F0777E52B99606E00FBA7E2 /* HomeViewBuilder.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				5FB688F62B79BB6700BBD98D /* HomeViewModel.swift */,
+				5F0777DF2B981DEE00FBA7E2 /* HomeViewModelContracts.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -482,16 +500,22 @@
 				5FB688FD2B79BBA100BBD98D /* SearchViewController.swift in Sources */,
 				5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */,
 				5FB689022B79BC5E00BBD98D /* MainTabbarController.swift in Sources */,
+				5F0777E62B99606E00FBA7E2 /* HomeViewBuilder.swift in Sources */,
 				5FB688B92B79BA1400BBD98D /* SceneDelegate.swift in Sources */,
+				5F0777E02B981DEE00FBA7E2 /* HomeViewModelContracts.swift in Sources */,
 				5FB688F72B79BB6700BBD98D /* HomeViewModel.swift in Sources */,
 				5F0777D22B956EA900FBA7E2 /* AppTheme.swift in Sources */,
 				5FB688FA2B79BB8200BBD98D /* UpComingViewController.swift in Sources */,
 				5FB689002B79BBC000BBD98D /* DownloadViewController.swift in Sources */,
 				5F0777D82B9642A400FBA7E2 /* HomeHeroHeaderView.swift in Sources */,
+				5F0777E22B981F3800FBA7E2 /* MovieModel.swift in Sources */,
 				5FB688F42B79BB4500BBD98D /* HomeViewController.swift in Sources */,
 				5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */,
 				5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */,
 				5F0777DA2B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift in Sources */,
+				5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */,
+				5F0777DE2B98187A00FBA7E2 /* NetworkCaller.swift in Sources */,
+				5F0777DC2B98146300FBA7E2 /* NetworkConstants.swift in Sources */,
 				5F0777D62B95772D00FBA7E2 /* Screen+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

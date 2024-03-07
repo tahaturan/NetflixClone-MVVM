@@ -12,6 +12,9 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     private var tableViewTopConstraint: Constraint?
     private let sectionTitles: [String] = ["Trending Movies", "Trending Tv","Upcoming Movies", "Top Rated"]
+    var homeViewModel: HomeViewModel?
+    private var popularMovieList: [MovieResult] = []
+    
     // MARK: - UICompenents
 
     private lazy var backroundImageView: UIImageView = {
@@ -39,6 +42,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupLayout()
+        homeViewModel?.delegate = self
+        homeViewModel?.loadMovie()
     }
 }
 
@@ -152,10 +157,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return header
     }
 }
-//MARK: - UICollectionView Delegate/DataSource
+//MARK: - -Header- UICollectionView Delegate/DataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return popularMovieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -166,4 +171,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+}
+//MARK: - HomeViewModel
+extension HomeViewController: HomeViewModelDelegate{
+    func handleOutput(_ output: HomeViewModelOutput) {
+        switch output {
+        case .popularMovies(let array):
+            self.popularMovieList = array
+            print(array)
+        case .upComingMovies(let array):
+            print("upcoming movies")
+        case .topRatedMovies(let array):
+            print("toprated")
+        case .error(let error):
+            print(error)
+        case .setLoading(let bool):
+            print("loading")
+        }
+    }
 }
