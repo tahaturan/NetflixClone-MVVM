@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
+import SDWebImage
 class HomeHeaderCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "HomeHeaderCollectionViewCell"
     private let headerImageView: UIImageView = {
           let imageView = UIImageView()
-          imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
           imageView.clipsToBounds = true
           imageView.image = .header
         imageView.layer.cornerRadius = 10
@@ -24,7 +24,6 @@ class HomeHeaderCollectionViewCell: UICollectionViewCell {
     }()
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Nobody sleeps in the woods tonight"
         label.textColor = .white
         label.font = AppFont.generalTitle.font()
         label.numberOfLines = 0
@@ -44,11 +43,14 @@ class HomeHeaderCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func configureCell(movie: MovieResult) {
+        guard let imageURLString = movie.posterPath else { return }
+        let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageURLString)")
+        headerImageView.sd_setImage(with: imageURL)
         
     }
     private func addGradient() {
         let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.clear.cgColor, UIColor.viewBackround.cgColor]
+        gradient.colors = [UIColor.clear.cgColor, UIColor.viewBackround.withAlphaComponent(0.8).cgColor]
         gradient.frame = bounds
         gradient.locations = [0,1]
         layer.addSublayer(gradient)
@@ -64,7 +66,7 @@ class HomeHeaderCollectionViewCell: UICollectionViewCell {
             make.height.equalTo(contentView.frame.height * 0.11)
         }
         titleLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(50)
             make.leading.equalToSuperview().inset(20)
             make.trailing.equalToSuperview().inset(60)
         }

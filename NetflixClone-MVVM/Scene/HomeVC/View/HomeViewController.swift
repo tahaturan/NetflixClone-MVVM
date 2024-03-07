@@ -167,7 +167,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHeaderCollectionViewCell.identifier, for: indexPath) as? HomeHeaderCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
+        let movie = popularMovieList[indexPath.row]
+        cell.configureCell(movie: movie)
         return cell
     }
     

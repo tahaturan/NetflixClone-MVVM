@@ -17,6 +17,7 @@
 		5F0777E22B981F3800FBA7E2 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E12B981F3800FBA7E2 /* MovieModel.swift */; };
 		5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */; };
 		5F0777E62B99606E00FBA7E2 /* HomeViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E52B99606E00FBA7E2 /* HomeViewBuilder.swift */; };
+		5F0777E92B996D0500FBA7E2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5F0777E82B996D0500FBA7E2 /* SDWebImage */; };
 		5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D352B8C0A340004354D /* AppSearchButton.swift */; };
 		5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */; };
 		5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB688B62B79BA1400BBD98D /* AppDelegate.swift */; };
@@ -93,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0777E92B996D0500FBA7E2 /* SDWebImage in Frameworks */,
 				5FB6890C2B79CEA200BBD98D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +379,7 @@
 			name = "NetflixClone-MVVM";
 			packageProductDependencies = (
 				5FB6890B2B79CEA200BBD98D /* SnapKit */,
+				5F0777E82B996D0500FBA7E2 /* SDWebImage */,
 			);
 			productName = "NetflixClone-MVVM";
 			productReference = 5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */;
@@ -452,6 +455,7 @@
 			mainGroup = 5FB688AA2B79BA1400BBD98D;
 			packageReferences = (
 				5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5F0777E72B996D0500FBA7E2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5FB688B42B79BA1400BBD98D /* Products */;
 			projectDirPath = "";
@@ -855,6 +859,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5F0777E72B996D0500FBA7E2 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.0;
+			};
+		};
 		5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -866,6 +878,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5F0777E82B996D0500FBA7E2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F0777E72B996D0500FBA7E2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		5FB6890B2B79CEA200BBD98D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */;
