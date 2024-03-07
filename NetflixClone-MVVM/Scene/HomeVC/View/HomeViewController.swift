@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     // MARK: - Properties
     private var tableViewTopConstraint: Constraint?
+    private let sectionTitles: [String] = ["Trending Movies", "Trending Tv","Upcoming Movies", "Top Rated"]
     // MARK: - UICompenents
 
     private lazy var backroundImageView: UIImageView = {
@@ -81,6 +82,7 @@ extension HomeViewController {
         tableView.dataSource = self
         
         tableView.register(MovieCollectionViewTableViewCell.self, forCellReuseIdentifier: MovieCollectionViewTableViewCell.identifier)
+        tableView.register(HomeHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: HomeHeaderFooterView.identifier)
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         headerCollectionView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height * 0.4)
@@ -102,7 +104,7 @@ extension HomeViewController {
 // MARK: - UITableView Delegate/DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 20
+        return sectionTitles.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -141,6 +143,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 self.view.layoutIfNeeded()
             }
         }
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HomeHeaderFooterView.identifier) as? HomeHeaderFooterView else { return nil }
+        
+        header.titleLabel.text = sectionTitles[section]
+        
+        return header
     }
 }
 //MARK: - UICollectionView Delegate/DataSource
