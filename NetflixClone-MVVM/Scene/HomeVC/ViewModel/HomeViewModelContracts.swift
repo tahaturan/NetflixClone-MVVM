@@ -19,6 +19,7 @@ enum HomeViewModelOutput {
     case popularMovies([MovieResult])
     case upComingMovies([MovieResult])
     case topRatedMovies([MovieResult])
+    case trendingTv([TvResult])
     case error(Error)
     case setLoading(Bool)
 }

@@ -50,6 +50,8 @@ enum EndPoint {
     case popular
     case topRated
     case upComing
+    case trendingTv
+    case trendingMovie
 }
 
 extension EndPoint: EndPointProtocol {
@@ -65,6 +67,10 @@ extension EndPoint: EndPointProtocol {
             return "/3/movie/top_rated"
         case .upComing:
             return "/3/movie/upcoming"
+        case .trendingTv:
+            return "/3/trending/tv/day"
+        case .trendingMovie:
+            return "/3/trending/movie/day"
         }
     }
     
@@ -79,6 +85,10 @@ extension EndPoint: EndPointProtocol {
         case .topRated:
             return .get
         case .upComing:
+            return .get
+        case .trendingTv:
+            return .get
+        case .trendingMovie:
             return .get
         }
     }

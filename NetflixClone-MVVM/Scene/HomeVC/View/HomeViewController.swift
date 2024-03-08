@@ -179,7 +179,7 @@ extension HomeViewController: HomeViewModelDelegate{
         switch output {
         case .popularMovies(let array):
             self.popularMovieList = array
-            print(array)
+            //print(array)
         case .upComingMovies(let array):
             print("upcoming movies")
         case .topRatedMovies(let array):
@@ -188,6 +188,8 @@ extension HomeViewController: HomeViewModelDelegate{
             print(error)
         case .setLoading(let bool):
             print("loading")
+        case .trendingTv(_):
+            print("tending Tv")
         }
     }
 }

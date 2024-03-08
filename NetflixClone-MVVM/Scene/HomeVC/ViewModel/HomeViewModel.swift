@@ -27,6 +27,15 @@ final class HomeViewModel: HomeViewModelContracts {
                 self?.delegate?.handleOutput(.error(error))
             }
         }
+        
+        service.fetchData(.trendingTv) {[weak self] (result: Result<Tv, NetworkError>) in
+            switch result {
+            case .success(let tv):
+                self?.delegate?.handleOutput(.trendingTv(tv.results ?? []))
+            case .failure(let failure):
+                print(failure)
+            }
+        }
     }
     func setLoading(_ isLoading: Bool) {
         self.delegate?.handleOutput(.setLoading(isLoading))
