@@ -42,6 +42,11 @@ class HomeHeaderCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        headerImageView.image = nil
+        titleLabel.text = nil
+    }
     func configureCell(movie: MovieResult) {
         guard let imageURLString = movie.posterPath else { return }
         let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageURLString)")

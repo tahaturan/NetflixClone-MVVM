@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F0777D22B956EA900FBA7E2 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777D12B956EA900FBA7E2 /* AppTheme.swift */; };
 		5F0777D62B95772D00FBA7E2 /* Screen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777D52B95772D00FBA7E2 /* Screen+Extension.swift */; };
-		5F0777D82B9642A400FBA7E2 /* HomeHeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777D72B9642A400FBA7E2 /* HomeHeroHeaderView.swift */; };
 		5F0777DA2B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777D92B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift */; };
 		5F0777DC2B98146300FBA7E2 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777DB2B98146300FBA7E2 /* NetworkConstants.swift */; };
 		5F0777DE2B98187A00FBA7E2 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777DD2B98187A00FBA7E2 /* NetworkCaller.swift */; };
@@ -58,7 +57,6 @@
 /* Begin PBXFileReference section */
 		5F0777D12B956EA900FBA7E2 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		5F0777D52B95772D00FBA7E2 /* Screen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screen+Extension.swift"; sourceTree = "<group>"; };
-		5F0777D72B9642A400FBA7E2 /* HomeHeroHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeroHeaderView.swift; sourceTree = "<group>"; };
 		5F0777D92B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F0777DB2B98146300FBA7E2 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		5F0777DD2B98187A00FBA7E2 /* NetworkCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 			children = (
 				5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */,
 				5F0777D92B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift */,
-				5F0777D72B9642A400FBA7E2 /* HomeHeroHeaderView.swift */,
 				5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */,
 			);
 			path = Cell;
@@ -511,7 +508,6 @@
 				5F0777D22B956EA900FBA7E2 /* AppTheme.swift in Sources */,
 				5FB688FA2B79BB8200BBD98D /* UpComingViewController.swift in Sources */,
 				5FB689002B79BBC000BBD98D /* DownloadViewController.swift in Sources */,
-				5F0777D82B9642A400FBA7E2 /* HomeHeroHeaderView.swift in Sources */,
 				5F0777E22B981F3800FBA7E2 /* MovieModel.swift in Sources */,
 				5FB688F42B79BB4500BBD98D /* HomeViewController.swift in Sources */,
 				5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */,
