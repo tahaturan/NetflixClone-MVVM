@@ -28,7 +28,7 @@ final class HomeViewModel: HomeViewModelContracts {
             }
         }
         
-        service.fetchData(.trendingTv) {[weak self] (result: Result<Tv, NetworkError>) in
+        service.fetchData(.trendingTv) {[weak self] (result: Result<Movie, NetworkError>) in
             switch result {
             case .success(let tv):
                 self?.delegate?.handleOutput(.trendingTv(tv.results ?? []))
