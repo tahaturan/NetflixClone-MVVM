@@ -41,10 +41,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     private func setupLayout() {
         posterImageView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(contentView.bounds.height * 0.65)
+            make.height.equalTo(contentView.frame.height * 0.65)
         }
         titleLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(contentView.snp.bottom)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-13)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }
