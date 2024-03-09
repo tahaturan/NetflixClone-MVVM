@@ -17,6 +17,8 @@
 		5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */; };
 		5F0777E62B99606E00FBA7E2 /* HomeViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777E52B99606E00FBA7E2 /* HomeViewBuilder.swift */; };
 		5F0777E92B996D0500FBA7E2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5F0777E82B996D0500FBA7E2 /* SDWebImage */; };
+		5F0777ED2B9AE59300FBA7E2 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777EC2B9AE59300FBA7E2 /* MovieCollectionViewCell.swift */; };
+		5F0777EF2B9AEDC800FBA7E2 /* HomeSectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0777EE2B9AEDC800FBA7E2 /* HomeSectionTableView.swift */; };
 		5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D352B8C0A340004354D /* AppSearchButton.swift */; };
 		5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */; };
 		5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB688B62B79BA1400BBD98D /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		5F0777E12B981F3800FBA7E2 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderFooterView.swift; sourceTree = "<group>"; };
 		5F0777E52B99606E00FBA7E2 /* HomeViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewBuilder.swift; sourceTree = "<group>"; };
+		5F0777EC2B9AE59300FBA7E2 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F0777EE2B9AEDC800FBA7E2 /* HomeSectionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionTableView.swift; sourceTree = "<group>"; };
 		5F4B7D352B8C0A340004354D /* AppSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchButton.swift; sourceTree = "<group>"; };
 		5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +132,8 @@
 				5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */,
 				5F0777D92B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift */,
 				5F0777E32B9942C500FBA7E2 /* HomeHeaderFooterView.swift */,
+				5F0777EC2B9AE59300FBA7E2 /* MovieCollectionViewCell.swift */,
+				5F0777EE2B9AEDC800FBA7E2 /* HomeSectionTableView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */,
 				5FB689022B79BC5E00BBD98D /* MainTabbarController.swift in Sources */,
 				5F0777E62B99606E00FBA7E2 /* HomeViewBuilder.swift in Sources */,
+				5F0777EF2B9AEDC800FBA7E2 /* HomeSectionTableView.swift in Sources */,
 				5FB688B92B79BA1400BBD98D /* SceneDelegate.swift in Sources */,
 				5F0777E02B981DEE00FBA7E2 /* HomeViewModelContracts.swift in Sources */,
 				5FB688F72B79BB6700BBD98D /* HomeViewModel.swift in Sources */,
@@ -515,6 +522,7 @@
 				5F0777DA2B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift in Sources */,
 				5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */,
 				5F0777DE2B98187A00FBA7E2 /* NetworkCaller.swift in Sources */,
+				5F0777ED2B9AE59300FBA7E2 /* MovieCollectionViewCell.swift in Sources */,
 				5F0777DC2B98146300FBA7E2 /* NetworkConstants.swift in Sources */,
 				5F0777D62B95772D00FBA7E2 /* Screen+Extension.swift in Sources */,
 			);

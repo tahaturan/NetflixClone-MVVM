@@ -11,9 +11,13 @@ import UIKit
 class HomeViewController: UIViewController {
     // MARK: - Properties
     private var tableViewTopConstraint: Constraint?
-    private let sectionTitles: [String] = ["Trending Movies", "Trending Tv","Upcoming Movies", "Top Rated"]
+    private let sectionTitles: [String] = ["Trending Movies","Upcoming Movies", "Top Rated","Trending TV"]
     var homeViewModel: HomeViewModel?
     private var popularMovieList: [MovieResult] = []
+    private var trendingTvList: [MovieResult] = []
+    private var trendingMoviesList: [MovieResult] = []
+    private var upcomingMoviesList: [MovieResult] = []
+    private var topRatedList: [MovieResult] = []
     
     // MARK: - UICompenents
 
@@ -43,7 +47,7 @@ class HomeViewController: UIViewController {
         setupUI()
         setupLayout()
         homeViewModel?.delegate = self
-        homeViewModel?.loadMovie()
+        homeViewModel?.loadData()
     }
 }
 
@@ -119,7 +123,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCollectionViewTableViewCell.identifier, for: indexPath) as? MovieCollectionViewTableViewCell else {
             return UITableViewCell()
         }
-
+        switch indexPath.section {
+        case HomeSectionTableView.trendingMovie.rawValue:
+            cell.configureCell(trendingMoviesList)
+        case HomeSectionTableView.upComing.rawValue:
+            cell.configureCell(upcomingMoviesList)
+        case HomeSectionTableView.topRated.rawValue:
+            cell.configureCell(topRatedList)
+        case HomeSectionTableView.trendingTV.rawValue:
+            cell.configureCell(trendingTvList)
+        default:
+            cell.configureCell(popularMovieList)
+        }
         return cell
     }
 
@@ -179,17 +194,24 @@ extension HomeViewController: HomeViewModelDelegate{
         switch output {
         case .popularMovies(let array):
             self.popularMovieList = array
-            //print(array)
+            DispatchQueue.main.async {
+                self.headerCollectionView.reloadData()
+            }
         case .upComingMovies(let array):
-            print("upcoming movies")
+            self.upcomingMoviesList = array
         case .topRatedMovies(let array):
-            print("toprated")
+            self.topRatedList = array
+        case .trendingTv(let array):
+            self.trendingTvList = array
+        case .trendingMovie(let array):
+            self.trendingMoviesList = array
+        case .setLoading(let bool):
+            print(bool)
         case .error(let error):
             print(error)
-        case .setLoading(let bool):
-            print("loading")
-        case .trendingTv(_):
-            print("tending Tv")
+        }
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
         }
     }
 }

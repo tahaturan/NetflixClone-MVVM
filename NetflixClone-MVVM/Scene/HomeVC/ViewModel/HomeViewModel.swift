@@ -8,18 +8,15 @@
 import Foundation
 
 final class HomeViewModel: HomeViewModelContracts {
-   weak var delegate: HomeViewModelDelegate?
     
+    weak var delegate: HomeViewModelDelegate?
     var service: NetworkServiceProtocol
     
     init(service: NetworkServiceProtocol) {
         self.service = service
     }
-    
-    func loadMovie() {
-        setLoading(true)
+    func getPopularMovie() {
         service.fetchData(.popular) {[weak self] (result: Result<Movie,NetworkError>) in
-            self?.setLoading(false)
             switch result {
             case .success(let movie):
                 self?.delegate?.handleOutput(.popularMovies(movie.results ?? []))
@@ -27,15 +24,59 @@ final class HomeViewModel: HomeViewModelContracts {
                 self?.delegate?.handleOutput(.error(error))
             }
         }
-        
+    }
+    
+    func getTrendingMovie() {
+        service.fetchData(.trendingMovie) {[weak self] (result: Result<Movie, NetworkError>) in
+            switch result {
+            case .success(let movie):
+                self?.delegate?.handleOutput(.trendingMovie(movie.results ?? []))
+            case .failure(let error):
+                self?.delegate?.handleOutput(.error(error))
+            }
+        }
+    }
+    
+    func getTrendingTv() {
         service.fetchData(.trendingTv) {[weak self] (result: Result<Movie, NetworkError>) in
             switch result {
             case .success(let tv):
                 self?.delegate?.handleOutput(.trendingTv(tv.results ?? []))
-            case .failure(let failure):
-                print(failure)
+            case .failure(let error):
+                self?.delegate?.handleOutput(.error(error))
             }
         }
+    }
+    
+    func getUpcomingMovie() {
+        service.fetchData(.upComing) {[weak self] (result: Result<Movie, NetworkError>) in
+            switch result {
+            case .success(let movie):
+                self?.delegate?.handleOutput(.upComingMovies(movie.results ?? []))
+            case .failure(let error):
+                self?.delegate?.handleOutput(.error(error))
+            }
+        }
+    }
+    
+    func getTopRatedMovie() {
+        service.fetchData(.topRated) {[weak self] (result: Result<Movie, NetworkError>) in
+            switch result {
+            case .success(let movie):
+                self?.delegate?.handleOutput(.topRatedMovies(movie.results ?? []))
+            case .failure(let error):
+                self?.delegate?.handleOutput(.error(error))
+            }
+        }
+    }
+    func loadData() {
+        setLoading(true)
+        getPopularMovie()
+        getTrendingTv()
+        getTrendingMovie()
+        getUpcomingMovie()
+        getTopRatedMovie()
+        setLoading(false)
     }
     func setLoading(_ isLoading: Bool) {
         self.delegate?.handleOutput(.setLoading(isLoading))

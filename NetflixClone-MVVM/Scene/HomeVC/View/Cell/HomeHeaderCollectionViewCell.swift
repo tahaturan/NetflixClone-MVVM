@@ -48,9 +48,10 @@ class HomeHeaderCollectionViewCell: UICollectionViewCell {
         titleLabel.text = nil
     }
     func configureCell(movie: MovieResult) {
-        guard let imageURLString = movie.posterPath else { return }
+        guard let imageURLString = movie.backdropPath else { return }
         let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageURLString)")
         headerImageView.sd_setImage(with: imageURL)
+        titleLabel.text = movie.title
         
     }
     private func addGradient() {
