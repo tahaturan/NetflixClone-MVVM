@@ -18,7 +18,7 @@ class MainTabbarController: UITabBarController {
     private func createTabbar() {
         let homeVC = UINavigationController(rootViewController: HomeViewBuilder.makeHomeViewController())
         let discoverVC = UINavigationController(rootViewController: DiscoverViewController())
-        let upComingVC = UINavigationController(rootViewController: UpComingViewController())
+        let upComingVC = UINavigationController(rootViewController: UpComingViewBuilder.makeUpComingViewController())
         let downloadVC = UINavigationController(rootViewController: DownloadViewController())
         
         homeVC.title = "Home"

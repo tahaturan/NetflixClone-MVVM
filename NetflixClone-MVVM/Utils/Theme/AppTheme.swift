@@ -11,6 +11,7 @@ import UIKit
 enum AppFont {
 case generalTitle
     case movieTableView
+    case upComingTitle
 }
 extension AppFont {
     func font() -> UIFont {
@@ -19,7 +20,10 @@ extension AppFont {
             return UIFont.systemFont(ofSize: 32, weight: .bold)
         case .movieTableView:
             return UIFont.systemFont(ofSize: 18, weight: .semibold)
+        case .upComingTitle:
+            return UIFont.systemFont(ofSize: 16, weight: .light)
         }
+        
     }
 }
 //MARK: AppSize
