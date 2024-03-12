@@ -13,7 +13,7 @@ enum AppIcon {
     case upComing
     case download
     case search
-    
+    case arrowRight
     func image() -> UIImage {
         switch self {
         case .home:
@@ -26,6 +26,8 @@ enum AppIcon {
             return UIImage(systemName: "arrow.down.to.line")!
         case .search:
             return UIImage(systemName: "magnifyingglass")!
+        case .arrowRight:
+            return UIImage(systemName: "arrow.right")!
         }
     }
 }
