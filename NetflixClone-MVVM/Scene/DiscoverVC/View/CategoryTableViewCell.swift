@@ -45,7 +45,7 @@ class CategoryTableViewCell: UITableViewCell {
             make.width.equalTo(contentView.bounds.width * 0.3)
         }
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(categoryImageView.snp.trailing).offset(10)
+            make.leading.equalTo(categoryImageView.snp.trailing).offset(15)
             make.centerY.equalTo(categoryImageView.snp.centerY)
             make.width.equalTo(contentView.bounds.width * 0.5)
         }

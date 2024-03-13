@@ -19,7 +19,7 @@ extension AppFont {
         case .generalTitle:
             return UIFont.systemFont(ofSize: 32, weight: .bold)
         case .movieTableView:
-            return UIFont.systemFont(ofSize: 18, weight: .semibold)
+            return UIFont.systemFont(ofSize: 18, weight: .bold)
         case .upComingTitle:
             return UIFont.systemFont(ofSize: 16, weight: .light)
         }

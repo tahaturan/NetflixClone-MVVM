@@ -21,6 +21,8 @@ class DiscoverViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
+        tableView.separatorColor = .white
+        tableView.showsVerticalScrollIndicator = false
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: CategoryTableViewCell.identifier)
         return tableView
     }()
@@ -51,7 +53,8 @@ extension DiscoverViewController {
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.trailing.bottom.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview().inset(10)
             make.leading.equalToSuperview().inset(10)
         }
     }

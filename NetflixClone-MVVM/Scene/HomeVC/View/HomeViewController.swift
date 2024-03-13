@@ -106,6 +106,7 @@ extension HomeViewController {
            headerCollectionView.dataSource = self
         headerCollectionView.register(HomeHeaderCollectionViewCell.self, forCellWithReuseIdentifier: HomeHeaderCollectionViewCell.identifier)
            headerCollectionView.backgroundColor = .clear
+        headerCollectionView.showsHorizontalScrollIndicator = false
         
     }
 }

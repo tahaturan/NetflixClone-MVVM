@@ -23,6 +23,7 @@ class UpComingViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         tableView.separatorColor = .white
+        tableView.showsVerticalScrollIndicator = false
         tableView.register(UpComingTableViewCell.self, forCellReuseIdentifier: UpComingTableViewCell.identifier)
         return tableView
     }()
@@ -59,7 +60,8 @@ extension UpComingViewController {
         }
         upComingTableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.bottom.equalToSuperview()
+            make.trailing.equalToSuperview().inset(10)
         }
     }
 }

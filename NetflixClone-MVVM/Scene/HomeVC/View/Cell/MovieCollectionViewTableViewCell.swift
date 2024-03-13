@@ -18,6 +18,7 @@ class MovieCollectionViewTableViewCell: UITableViewCell {
         layout.itemSize = CGSize(width: UIScreen.screenWidth * 0.35, height: UIScreen.screenWidth * 0.52)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
         return collectionView
     }()
