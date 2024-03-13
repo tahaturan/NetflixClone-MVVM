@@ -22,6 +22,7 @@ class UpComingViewController: UIViewController {
     let upComingTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
+        tableView.separatorColor = .white
         tableView.register(UpComingTableViewCell.self, forCellReuseIdentifier: UpComingTableViewCell.identifier)
         return tableView
     }()

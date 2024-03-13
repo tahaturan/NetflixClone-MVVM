@@ -15,6 +15,7 @@ class UpComingTableViewCell: UITableViewCell {
     private let posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
         return imageView
     }()
     private let titleLabel: UILabel = {
@@ -48,10 +49,10 @@ class UpComingTableViewCell: UITableViewCell {
         contentView.addSubview(playButton)
      
         posterImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().inset(10)
             make.leading.equalToSuperview()
             make.width.equalTo(contentView.frame.width * 0.4)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(10)
         }
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(posterImageView.snp.trailing).offset(10)
