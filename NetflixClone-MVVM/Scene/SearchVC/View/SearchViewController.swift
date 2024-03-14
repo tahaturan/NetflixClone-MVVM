@@ -56,6 +56,7 @@ extension SearchViewController {
         view.backgroundColor = .viewBackround
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
+        searchController.searchBar.searchTextField.textColor = .white
         definesPresentationContext = true
         view.addSubview(backroundImageView)
         view.sendSubviewToBack(backroundImageView)
