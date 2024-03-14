@@ -12,6 +12,7 @@ enum AppFont {
 case generalTitle
     case movieTableView
     case upComingTitle
+    case searhedTitle
 }
 extension AppFont {
     func font() -> UIFont {
@@ -22,6 +23,8 @@ extension AppFont {
             return UIFont.systemFont(ofSize: 18, weight: .bold)
         case .upComingTitle:
             return UIFont.systemFont(ofSize: 16, weight: .light)
+        case .searhedTitle:
+            return UIFont.systemFont(ofSize: 14, weight: .semibold)
         }
         
     }

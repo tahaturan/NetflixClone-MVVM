@@ -48,6 +48,15 @@ class HomeViewController: UIViewController {
         setupLayout()
         homeViewModel?.delegate = self
         homeViewModel?.loadData()
+        searchButton.delegate = self
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
 }
 
@@ -57,6 +66,7 @@ extension HomeViewController {
     private func setupUI() {
         view.backgroundColor = .viewBackround
         navigationController?.navigationBar.isHidden = true
+        navigationItem.backButtonTitle = ""
         view.addSubview(backroundImageView)
         view.sendSubviewToBack(backroundImageView)
         view.addSubview(titleLabel)
@@ -214,5 +224,13 @@ extension HomeViewController: HomeViewModelDelegate{
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
+    }
+}
+//MARK: - AppSearchButtonDelegate
+extension HomeViewController: AppSearchButtonDelegate {
+    func searchButtonClicked() {
+        let searchVC = SearchViewController()
+        searchVC.navigationItem.backButtonTitle = ""
+        navigationController?.pushViewController(searchVC, animated: true)
     }
 }

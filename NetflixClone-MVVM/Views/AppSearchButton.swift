@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol AppSearchButtonDelegate: AnyObject {
+    func searchButtonClicked()
+}
+
 class AppSearchButton: UIButton {
+    //MARK: - Properties
+    weak var delegate: AppSearchButtonDelegate?
     
-    
+    //MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
@@ -27,11 +33,14 @@ class AppSearchButton: UIButton {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         tintColor = .red.withAlphaComponent(0.6)
         backgroundColor = .tabbarBackround.withAlphaComponent(0.8)
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         tintColor = .white
         backgroundColor = .tabbarBackround
+        self.delegate?.searchButtonClicked()
     }
 }
