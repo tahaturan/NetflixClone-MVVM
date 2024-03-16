@@ -65,4 +65,12 @@ class MovieCollectionViewCell: UICollectionViewCell {
             titleLabel.text = movie.name
         }
     }
+    func configureCell(searchMovie: MovieResult) {
+        if let imageURLString = searchMovie.posterPath  {
+            let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(imageURLString)")
+            posterImageView.sd_setImage(with: imageURL)
+        } else {
+            posterImageView.image = .header
+        }
+    }
 }

@@ -19,22 +19,25 @@ class SearchViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    private let searchController: UISearchController = {
-        let search = UISearchController()
+    private lazy var searchController: UISearchController = {
+        let search = UISearchController(searchResultsController: SearchResultsViewController())
         search.searchBar.placeholder = "Search"
         search.obscuresBackgroundDuringPresentation = true
         search.searchBar.scopeButtonTitles = ["Movie", "TV Show", "Popular"]
-        search.searchBar.scopeBarBackgroundImage = .searchbackgroundIMG
+        search.searchBar.backgroundColor = .clear
         search.searchBar.setScopeBarButtonTitleTextAttributes([.foregroundColor: UIColor.tabbarSelected], for: .normal)
         search.searchBar.tintColor = .white
+        
+        search.searchBar.delegate = self
+        search.searchResultsUpdater = self
         return search
     }()
     lazy var searchedCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .viewBackround
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -48,14 +51,16 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupLayout()
+        configureNavAndTabbar()
     }
 }
 //MARK: - Helper
 extension SearchViewController {
     private func setupUI() {
         view.backgroundColor = .viewBackround
+        title = "Search"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.searchController = searchController
-        searchController.searchBar.delegate = self
         searchController.searchBar.searchTextField.textColor = .white
         definesPresentationContext = true
         view.addSubview(backroundImageView)
@@ -68,6 +73,24 @@ extension SearchViewController {
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
         }
+        searchedCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    private func configureNavAndTabbar() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor.clear
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor.clear
+        tabBarController?.tabBar.standardAppearance = tabBarAppearance
+        tabBarController?.tabBar.scrollEdgeAppearance = tabBarAppearance
     }
 }
 
@@ -81,6 +104,15 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.showsScopeBar = false
         searchBar.sizeToFit()
     }
+}
+//MARK: - UISearchResultsUpdating
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
+        print(searchText)
+    }
+    
+    
 }
 //MARK: - UICollectionView DataSource/Delegate
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -101,7 +133,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         guard let cell = collectionView.cellForItem(at: indexPath) else { return  }
         let text = indexPath.section == 0 ? feturedList[indexPath.item] : searchedList[indexPath.item]
         searchController.searchBar.text = text
-        
+        searchController.isActive = true
         UIView.animate(withDuration: 0.1) {
             cell.backgroundColor = .tabbarSelected.withAlphaComponent(0.5)
         } completion: { completion in
