@@ -28,6 +28,10 @@
 		5F0778072BA28C7F00FBA7E2 /* SearchedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778062BA28C7F00FBA7E2 /* SearchedCollectionViewCell.swift */; };
 		5F07780A2BA291CE00FBA7E2 /* SearchedSectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778092BA291CE00FBA7E2 /* SearchedSectionHeaderCollectionReusableView.swift */; };
 		5F0778102BA3FD3900FBA7E2 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07780F2BA3FD3900FBA7E2 /* SearchResultsViewController.swift */; };
+		5F0778132BA5D82E00FBA7E2 /* SearchViewModelContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778122BA5D82E00FBA7E2 /* SearchViewModelContracts.swift */; };
+		5F0778152BA5D98400FBA7E2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778142BA5D98400FBA7E2 /* SearchViewModel.swift */; };
+		5F0778172BA5DE8F00FBA7E2 /* SearchViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778162BA5DE8F00FBA7E2 /* SearchViewBuilder.swift */; };
+		5F0778192BA5E1F000FBA7E2 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778182BA5E1F000FBA7E2 /* CustomActivityIndicator.swift */; };
 		5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D352B8C0A340004354D /* AppSearchButton.swift */; };
 		5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */; };
 		5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB688B62B79BA1400BBD98D /* AppDelegate.swift */; };
@@ -86,6 +90,10 @@
 		5F0778062BA28C7F00FBA7E2 /* SearchedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F0778092BA291CE00FBA7E2 /* SearchedSectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedSectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		5F07780F2BA3FD3900FBA7E2 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		5F0778122BA5D82E00FBA7E2 /* SearchViewModelContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelContracts.swift; sourceTree = "<group>"; };
+		5F0778142BA5D98400FBA7E2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		5F0778162BA5DE8F00FBA7E2 /* SearchViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewBuilder.swift; sourceTree = "<group>"; };
+		5F0778182BA5E1F000FBA7E2 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
 		5F4B7D352B8C0A340004354D /* AppSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchButton.swift; sourceTree = "<group>"; };
 		5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,10 +170,20 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		5F0778112BA5D81900FBA7E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F0778122BA5D82E00FBA7E2 /* SearchViewModelContracts.swift */,
+				5F0778142BA5D98400FBA7E2 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5F4B7D342B8C0A190004354D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5F4B7D352B8C0A340004354D /* AppSearchButton.swift */,
+				5F0778182BA5E1F000FBA7E2 /* CustomActivityIndicator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +347,7 @@
 		5FB688F02B79BAFF00BBD98D /* SearchVC */ = {
 			isa = PBXGroup;
 			children = (
+				5F0778112BA5D81900FBA7E2 /* ViewModel */,
 				5FB688FB2B79BB9200BBD98D /* View */,
 			);
 			path = SearchVC;
@@ -377,6 +396,7 @@
 				5F0778082BA2918100FBA7E2 /* Cell */,
 				5FB688FC2B79BBA100BBD98D /* SearchViewController.swift */,
 				5F07780F2BA3FD3900FBA7E2 /* SearchResultsViewController.swift */,
+				5F0778162BA5DE8F00FBA7E2 /* SearchViewBuilder.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,6 +577,8 @@
 				5F0777FA2B9D857300FBA7E2 /* UpComingViewModel.swift in Sources */,
 				5FB689092B79C6DE00BBD98D /* AppIcon.swift in Sources */,
 				5FB689062B79C61400BBD98D /* DiscoverViewController.swift in Sources */,
+				5F0778172BA5DE8F00FBA7E2 /* SearchViewBuilder.swift in Sources */,
+				5F0778192BA5E1F000FBA7E2 /* CustomActivityIndicator.swift in Sources */,
 				5FB688FD2B79BBA100BBD98D /* SearchViewController.swift in Sources */,
 				5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */,
 				5FB689022B79BC5E00BBD98D /* MainTabbarController.swift in Sources */,
@@ -567,6 +589,7 @@
 				5F0777E02B981DEE00FBA7E2 /* HomeViewModelContracts.swift in Sources */,
 				5F0778032BA013CE00FBA7E2 /* MovieCategoryModel.swift in Sources */,
 				5FB688F72B79BB6700BBD98D /* HomeViewModel.swift in Sources */,
+				5F0778152BA5D98400FBA7E2 /* SearchViewModel.swift in Sources */,
 				5F0777D22B956EA900FBA7E2 /* AppTheme.swift in Sources */,
 				5F0778012B9D922800FBA7E2 /* UpComingTableViewCell.swift in Sources */,
 				5FB688FA2B79BB8200BBD98D /* UpComingViewController.swift in Sources */,
@@ -581,6 +604,7 @@
 				5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */,
 				5F0777DA2B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift in Sources */,
 				5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */,
+				5F0778132BA5D82E00FBA7E2 /* SearchViewModelContracts.swift in Sources */,
 				5F0777DE2B98187A00FBA7E2 /* NetworkCaller.swift in Sources */,
 				5F0777ED2B9AE59300FBA7E2 /* MovieCollectionViewCell.swift in Sources */,
 				5F0777DC2B98146300FBA7E2 /* NetworkConstants.swift in Sources */,

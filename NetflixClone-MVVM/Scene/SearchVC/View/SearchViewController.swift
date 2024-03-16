@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
     //MARK: - Properties
     private var feturedList: [String] = ["Anime", "IT", "Halloween", "Comedy", "Peaky Blinders", "Mery Chirstmas"]
     private var searchedList: [String] = ["The Walking Dead", "Startup", "Ben 10", "The Witches","Damsel"]
+    var searchViewModel: SearchViewModel?
     //MARK: - UIComponents
     private lazy var backroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -46,12 +47,14 @@ class SearchViewController: UIViewController {
         collectionView.register(SearchedSectionHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchedSectionHeaderCollectionReusableView.identifier)
         return collectionView
     }()
+    private var indicator: CustomActivityIndicator = CustomActivityIndicator()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupLayout()
         configureNavAndTabbar()
+        searchViewModel?.delagate = self
     }
 }
 //MARK: - Helper
@@ -108,11 +111,29 @@ extension SearchViewController: UISearchBarDelegate {
 //MARK: - UISearchResultsUpdating
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
-        print(searchText)
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty,searchText.count >= 3 else { return }
+        
+        self.searchViewModel?.getSearchMovie(width: searchText)
     }
-    
-    
+}
+//MARK: - SearchViewModelDelegate
+extension SearchViewController: SearchViewModelDelegate {
+    func handleOutput(_ output: SearchViewModelOutput) {
+        switch output {
+        case .searchMovieResult(let array):
+            DispatchQueue.main.async {
+                guard let searchResultContoller = self.searchController.searchResultsController as? SearchResultsViewController else {return}
+                searchResultContoller.movieList = array
+                searchResultContoller.searchResultCollectionView.reloadData()
+            }
+        case .error(let error):
+            print(error)
+        case .setLoading(let isLoading):
+            DispatchQueue.main.async {
+                isLoading ? self.indicator.show(on: self) : self.indicator.hide()
+            }
+        }
+    }
 }
 //MARK: - UICollectionView DataSource/Delegate
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {

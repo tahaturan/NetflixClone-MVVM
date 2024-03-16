@@ -10,9 +10,9 @@ import SnapKit
 
 class SearchResultsViewController: UIViewController {
     //MARK: - Properties
-    private var movieList: [MovieResult] = []
+     var movieList: [MovieResult] = []
     //MARK: - UIComponents
-    private lazy var searchResultCollectionView: UICollectionView = {
+     lazy var searchResultCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: view.bounds.width / 3 - 10, height: view.bounds.height * 0.2)
         layout.minimumInteritemSpacing = 0
@@ -48,11 +48,12 @@ extension SearchResultsViewController {
 //MARK: -
 extension SearchResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movieList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .red
+        let movie = movieList[indexPath.row]
+        cell.configureCell(searchMovie: movie)
         return cell
     }
 }

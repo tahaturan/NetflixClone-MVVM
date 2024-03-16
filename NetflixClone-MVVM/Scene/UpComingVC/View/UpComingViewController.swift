@@ -19,7 +19,7 @@ class UpComingViewController: UIViewController {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    let upComingTableView: UITableView = {
+    private let upComingTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         tableView.separatorColor = .white
@@ -27,6 +27,7 @@ class UpComingViewController: UIViewController {
         tableView.register(UpComingTableViewCell.self, forCellReuseIdentifier: UpComingTableViewCell.identifier)
         return tableView
     }()
+    private var indicator: CustomActivityIndicator = CustomActivityIndicator()
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,20 +90,19 @@ extension UpComingViewController: UITableViewDataSource, UITableViewDelegate {
 //MARK: - UpComingViewModel Output
 extension UpComingViewController: UpComingViewModelDelegate {
     func handleOutput(_ output: UpComingViewModelOutput) {
-        //TODO: alert ile error ve loding ile de activity indicator yapilacak
+        //TODO: alert ile error yapilacak
         switch output {
         case .upComingMovies(let array):
             self.upComingMovies = array
         case .error(let error):
             print(error)
-        case .setLoading(let bool):
-            print(bool)
+        case .setLoading(let isLoading):
+            DispatchQueue.main.async {
+                isLoading ? self.indicator.show(on: self) : self.indicator.hide()
+            }
         }
-        
         DispatchQueue.main.async {
             self.upComingTableView.reloadData()
         }
     }
-    
-    
 }

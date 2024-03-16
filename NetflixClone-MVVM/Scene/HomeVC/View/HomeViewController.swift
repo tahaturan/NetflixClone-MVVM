@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     private let searchButton: AppSearchButton = AppSearchButton()
     private var tableView: UITableView = UITableView(frame: .zero, style: .grouped)
     private var headerCollectionView: UICollectionView!
-
+    private var indicator: CustomActivityIndicator = CustomActivityIndicator()
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -216,8 +216,10 @@ extension HomeViewController: HomeViewModelDelegate{
             self.trendingTvList = array
         case .trendingMovie(let array):
             self.trendingMoviesList = array
-        case .setLoading(let bool):
-            print(bool)
+        case .setLoading(let isLoading):
+            DispatchQueue.main.async {
+                isLoading ? self.indicator.show(on: self) : self.indicator.hide()
+            }
         case .error(let error):
             print(error)
         }
@@ -229,7 +231,7 @@ extension HomeViewController: HomeViewModelDelegate{
 //MARK: - AppSearchButtonDelegate
 extension HomeViewController: AppSearchButtonDelegate {
     func searchButtonClicked() {
-        let searchVC = SearchViewController()
+        let searchVC = SearchViewBuilder.makeSearchViewController()
         searchVC.navigationItem.backButtonTitle = ""
         navigationController?.pushViewController(searchVC, animated: true)
     }

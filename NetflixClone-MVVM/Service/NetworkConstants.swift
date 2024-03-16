@@ -52,6 +52,7 @@ enum EndPoint {
     case upComing
     case trendingTv
     case trendingMovie
+    case searchMovie(name:String)
 }
 
 extension EndPoint: EndPointProtocol {
@@ -62,20 +63,22 @@ extension EndPoint: EndPointProtocol {
     var genreURL: String {
         switch self {
         case .popular:
-            return "/3/movie/popular"
+            return "/3/movie/popular?"
         case .topRated:
-            return "/3/movie/top_rated"
+            return "/3/movie/top_rated?"
         case .upComing:
-            return "/3/movie/upcoming"
+            return "/3/movie/upcoming?"
         case .trendingTv:
-            return "/3/trending/tv/day"
+            return "/3/trending/tv/day?"
         case .trendingMovie:
-            return "/3/trending/movie/day"
+            return "/3/trending/movie/day?"
+        case .searchMovie(name: let name):
+            return "/3/search/movie?query=\(name)&"
         }
     }
     
     var apiKey: String {
-        return "?api_key=e40dc646b135a28e88caf13e4da0aec2"
+        return "api_key=e40dc646b135a28e88caf13e4da0aec2"
     }
     
     var method: HTTPMethod {
@@ -89,6 +92,8 @@ extension EndPoint: EndPointProtocol {
         case .trendingTv:
             return .get
         case .trendingMovie:
+            return .get
+        case .searchMovie(name: _):
             return .get
         }
     }
