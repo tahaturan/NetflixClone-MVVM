@@ -84,6 +84,9 @@ extension UpComingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let movie = upComingMovies[indexPath.row]
+        let detailVC = DetailViewBuilder.makeDetailViewController(movieID: movie.id ?? 178)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

@@ -53,6 +53,7 @@ enum EndPoint {
     case trendingTv
     case trendingMovie
     case searchMovie(name:String)
+    case getMovieWitdhID(id: Int)
 }
 
 extension EndPoint: EndPointProtocol {
@@ -74,6 +75,8 @@ extension EndPoint: EndPointProtocol {
             return "/3/trending/movie/day?"
         case .searchMovie(name: let name):
             return "/3/search/movie?query=\(name)&"
+        case .getMovieWitdhID(id: let id):
+            return "/3/movie/\(id)?"
         }
     }
     
@@ -94,6 +97,8 @@ extension EndPoint: EndPointProtocol {
         case .trendingMovie:
             return .get
         case .searchMovie(name: _):
+            return .get
+        case .getMovieWitdhID(id: _):
             return .get
         }
     }

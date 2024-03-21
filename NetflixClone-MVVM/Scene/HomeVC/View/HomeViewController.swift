@@ -146,6 +146,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             cell.configureCell(popularMovieList)
         }
+        cell.delegate = self
         return cell
     }
 
@@ -198,6 +199,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+}
+//MARK: -
+extension HomeViewController: MovieCollectionViewTableViewCellDelagate {
+    func didSelectMovie(_ movie: MovieResult) {
+        let detailVC = DetailViewBuilder.makeDetailViewController(movieID: movie.id ?? 178)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 //MARK: - HomeViewModel
 extension HomeViewController: HomeViewModelDelegate{

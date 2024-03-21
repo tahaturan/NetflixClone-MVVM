@@ -32,6 +32,12 @@
 		5F0778152BA5D98400FBA7E2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778142BA5D98400FBA7E2 /* SearchViewModel.swift */; };
 		5F0778172BA5DE8F00FBA7E2 /* SearchViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778162BA5DE8F00FBA7E2 /* SearchViewBuilder.swift */; };
 		5F0778192BA5E1F000FBA7E2 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778182BA5E1F000FBA7E2 /* CustomActivityIndicator.swift */; };
+		5F07781E2BA6EC7200FBA7E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07781D2BA6EC7200FBA7E2 /* DetailViewController.swift */; };
+		5F0778202BA6F37100FBA7E2 /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07781F2BA6F37100FBA7E2 /* MovieDetailModel.swift */; };
+		5F0778232BAB05CD00FBA7E2 /* CustomToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778222BAB05CD00FBA7E2 /* CustomToolbar.swift */; };
+		5F0778272BAB13DE00FBA7E2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778262BAB13DE00FBA7E2 /* DetailViewModel.swift */; };
+		5F0778292BAB13F300FBA7E2 /* DetailViewModelContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778282BAB13F300FBA7E2 /* DetailViewModelContracts.swift */; };
+		5F07782B2BAB170600FBA7E2 /* DetailViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07782A2BAB170600FBA7E2 /* DetailViewBuilder.swift */; };
 		5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D352B8C0A340004354D /* AppSearchButton.swift */; };
 		5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */; };
 		5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB688B62B79BA1400BBD98D /* AppDelegate.swift */; };
@@ -94,6 +100,12 @@
 		5F0778142BA5D98400FBA7E2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5F0778162BA5DE8F00FBA7E2 /* SearchViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewBuilder.swift; sourceTree = "<group>"; };
 		5F0778182BA5E1F000FBA7E2 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
+		5F07781D2BA6EC7200FBA7E2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5F07781F2BA6F37100FBA7E2 /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
+		5F0778222BAB05CD00FBA7E2 /* CustomToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbar.swift; sourceTree = "<group>"; };
+		5F0778262BAB13DE00FBA7E2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		5F0778282BAB13F300FBA7E2 /* DetailViewModelContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelContracts.swift; sourceTree = "<group>"; };
+		5F07782A2BAB170600FBA7E2 /* DetailViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBuilder.swift; sourceTree = "<group>"; };
 		5F4B7D352B8C0A340004354D /* AppSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchButton.swift; sourceTree = "<group>"; };
 		5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +189,42 @@
 				5F0778142BA5D98400FBA7E2 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5F07781A2BA6EC3300FBA7E2 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				5F07781C2BA6EC4400FBA7E2 /* ViewModel */,
+				5F07781B2BA6EC3C00FBA7E2 /* View */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		5F07781B2BA6EC3C00FBA7E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F0778212BAB05B500FBA7E2 /* CustomView */,
+				5F07781D2BA6EC7200FBA7E2 /* DetailViewController.swift */,
+				5F07782A2BAB170600FBA7E2 /* DetailViewBuilder.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F07781C2BA6EC4400FBA7E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F0778262BAB13DE00FBA7E2 /* DetailViewModel.swift */,
+				5F0778282BAB13F300FBA7E2 /* DetailViewModelContracts.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5F0778212BAB05B500FBA7E2 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				5F0778222BAB05CD00FBA7E2 /* CustomToolbar.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		5F4B7D342B8C0A190004354D /* Views */ = {
@@ -293,6 +341,7 @@
 			children = (
 				5F0777E12B981F3800FBA7E2 /* MovieModel.swift */,
 				5F0778022BA013CE00FBA7E2 /* MovieCategoryModel.swift */,
+				5F07781F2BA6F37100FBA7E2 /* MovieDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +366,7 @@
 		5FB688ED2B79BAE400BBD98D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				5F07781A2BA6EC3300FBA7E2 /* DetailVC */,
 				5FB688EE2B79BAEA00BBD98D /* HomeVC */,
 				5FB688F12B79BB0800BBD98D /* DownloadVC */,
 				5FB688F02B79BAFF00BBD98D /* SearchVC */,
@@ -574,8 +624,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F0778072BA28C7F00FBA7E2 /* SearchedCollectionViewCell.swift in Sources */,
+				5F0778232BAB05CD00FBA7E2 /* CustomToolbar.swift in Sources */,
 				5F0777FA2B9D857300FBA7E2 /* UpComingViewModel.swift in Sources */,
 				5FB689092B79C6DE00BBD98D /* AppIcon.swift in Sources */,
+				5F0778202BA6F37100FBA7E2 /* MovieDetailModel.swift in Sources */,
 				5FB689062B79C61400BBD98D /* DiscoverViewController.swift in Sources */,
 				5F0778172BA5DE8F00FBA7E2 /* SearchViewBuilder.swift in Sources */,
 				5F0778192BA5E1F000FBA7E2 /* CustomActivityIndicator.swift in Sources */,
@@ -591,8 +643,11 @@
 				5FB688F72B79BB6700BBD98D /* HomeViewModel.swift in Sources */,
 				5F0778152BA5D98400FBA7E2 /* SearchViewModel.swift in Sources */,
 				5F0777D22B956EA900FBA7E2 /* AppTheme.swift in Sources */,
+				5F07781E2BA6EC7200FBA7E2 /* DetailViewController.swift in Sources */,
+				5F0778292BAB13F300FBA7E2 /* DetailViewModelContracts.swift in Sources */,
 				5F0778012B9D922800FBA7E2 /* UpComingTableViewCell.swift in Sources */,
 				5FB688FA2B79BB8200BBD98D /* UpComingViewController.swift in Sources */,
+				5F0778272BAB13DE00FBA7E2 /* DetailViewModel.swift in Sources */,
 				5FB689002B79BBC000BBD98D /* DownloadViewController.swift in Sources */,
 				5F0777E22B981F3800FBA7E2 /* MovieModel.swift in Sources */,
 				5F07780A2BA291CE00FBA7E2 /* SearchedSectionHeaderCollectionReusableView.swift in Sources */,
@@ -601,6 +656,7 @@
 				5F0777FE2B9D88BC00FBA7E2 /* UpComingViewBuilder.swift in Sources */,
 				5FB688F42B79BB4500BBD98D /* HomeViewController.swift in Sources */,
 				5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */,
+				5F07782B2BAB170600FBA7E2 /* DetailViewBuilder.swift in Sources */,
 				5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */,
 				5F0777DA2B964E0700FBA7E2 /* HomeHeaderCollectionViewCell.swift in Sources */,
 				5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */,

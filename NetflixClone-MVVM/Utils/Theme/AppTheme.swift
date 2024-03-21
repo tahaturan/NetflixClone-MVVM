@@ -13,6 +13,8 @@ case generalTitle
     case movieTableView
     case upComingTitle
     case searhedTitle
+    case detailLabel
+    case detailTitle
 }
 extension AppFont {
     func font() -> UIFont {
@@ -25,6 +27,10 @@ extension AppFont {
             return UIFont.systemFont(ofSize: 16, weight: .light)
         case .searhedTitle:
             return UIFont.systemFont(ofSize: 14, weight: .semibold)
+        case .detailLabel:
+            return UIFont.systemFont(ofSize: 18)
+        case .detailTitle:
+            return UIFont.systemFont(ofSize: 24, weight: .semibold)
         }
         
     }

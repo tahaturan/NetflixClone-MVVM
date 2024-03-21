@@ -21,7 +21,9 @@ class SearchViewController: UIViewController {
         return imageView
     }()
     private lazy var searchController: UISearchController = {
-        let search = UISearchController(searchResultsController: SearchResultsViewController())
+        let searchResultController = SearchResultsViewController()
+        searchResultController.delegate = self
+        let search = UISearchController(searchResultsController: searchResultController)
         search.searchBar.placeholder = "Search"
         search.obscuresBackgroundDuringPresentation = true
         search.searchBar.scopeButtonTitles = ["Movie", "TV Show", "Popular"]
@@ -199,5 +201,12 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: view.bounds.height * 0.04)
+    }
+}
+//MARK: - SearchResultsViewDelegate
+extension SearchViewController: SearchResultsViewDelegate {
+    func didSelectMovie(_ movieID: Int) {
+        let detailVC = DetailViewBuilder.makeDetailViewController(movieID: movieID)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }

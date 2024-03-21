@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol MovieCollectionViewTableViewCellDelagate: AnyObject {
+    func didSelectMovie(_ movie: MovieResult)
+}
+
 class MovieCollectionViewTableViewCell: UITableViewCell {
     //MARK: - Properties
+    weak var delegate: MovieCollectionViewTableViewCellDelagate?
     static let identifier: String = "MovieCollectionViewTableViewCell"
     private var movieList: [MovieResult] = []
     //MARK: - UICompanents
@@ -64,5 +69,9 @@ extension MovieCollectionViewTableViewCell: UICollectionViewDelegate, UICollecti
         let movie = movieList[indexPath.row]
         cell.configureCell(movie)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = movieList[indexPath.row]
+        self.delegate?.didSelectMovie(movie)
     }
 }

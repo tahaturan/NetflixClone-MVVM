@@ -7,10 +7,13 @@
 
 import UIKit
 import SnapKit
-
+protocol SearchResultsViewDelegate: AnyObject {
+    func didSelectMovie(_ movieID: Int)
+}
 class SearchResultsViewController: UIViewController {
     //MARK: - Properties
      var movieList: [MovieResult] = []
+    weak var delegate: SearchResultsViewDelegate?
     //MARK: - UIComponents
      lazy var searchResultCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -45,7 +48,7 @@ extension SearchResultsViewController {
         }
     }
 }
-//MARK: -
+//MARK: - UICollectionView Delegate/DataSource
 extension SearchResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieList.count
@@ -55,5 +58,9 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         let movie = movieList[indexPath.row]
         cell.configureCell(searchMovie: movie)
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movieID = movieList[indexPath.row].id ?? 178
+        self.delegate?.didSelectMovie(movieID)
     }
 }
