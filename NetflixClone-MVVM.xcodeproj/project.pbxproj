@@ -38,6 +38,7 @@
 		5F0778272BAB13DE00FBA7E2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778262BAB13DE00FBA7E2 /* DetailViewModel.swift */; };
 		5F0778292BAB13F300FBA7E2 /* DetailViewModelContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778282BAB13F300FBA7E2 /* DetailViewModelContracts.swift */; };
 		5F07782B2BAB170600FBA7E2 /* DetailViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07782A2BAB170600FBA7E2 /* DetailViewBuilder.swift */; };
+		5F07782D2BAC320B00FBA7E2 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07782C2BAC320B00FBA7E2 /* ViewController+Extension.swift */; };
 		5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D352B8C0A340004354D /* AppSearchButton.swift */; };
 		5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */; };
 		5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB688B62B79BA1400BBD98D /* AppDelegate.swift */; };
@@ -106,6 +107,7 @@
 		5F0778262BAB13DE00FBA7E2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		5F0778282BAB13F300FBA7E2 /* DetailViewModelContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelContracts.swift; sourceTree = "<group>"; };
 		5F07782A2BAB170600FBA7E2 /* DetailViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBuilder.swift; sourceTree = "<group>"; };
+		5F07782C2BAC320B00FBA7E2 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		5F4B7D352B8C0A340004354D /* AppSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchButton.swift; sourceTree = "<group>"; };
 		5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				5F0777D52B95772D00FBA7E2 /* Screen+Extension.swift */,
+				5F07782C2BAC320B00FBA7E2 /* ViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				5F0778292BAB13F300FBA7E2 /* DetailViewModelContracts.swift in Sources */,
 				5F0778012B9D922800FBA7E2 /* UpComingTableViewCell.swift in Sources */,
 				5FB688FA2B79BB8200BBD98D /* UpComingViewController.swift in Sources */,
+				5F07782D2BAC320B00FBA7E2 /* ViewController+Extension.swift in Sources */,
 				5F0778272BAB13DE00FBA7E2 /* DetailViewModel.swift in Sources */,
 				5FB689002B79BBC000BBD98D /* DownloadViewController.swift in Sources */,
 				5F0777E22B981F3800FBA7E2 /* MovieModel.swift in Sources */,

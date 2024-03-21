@@ -98,7 +98,7 @@ extension UpComingViewController: UpComingViewModelDelegate {
         case .upComingMovies(let array):
             self.upComingMovies = array
         case .error(let error):
-            print(error)
+            showAlert(title: "Error", message: error.localizedDescription)
         case .setLoading(let isLoading):
             DispatchQueue.main.async {
                 isLoading ? self.indicator.show(on: self) : self.indicator.hide()

@@ -229,7 +229,7 @@ extension HomeViewController: HomeViewModelDelegate{
                 isLoading ? self.indicator.show(on: self) : self.indicator.hide()
             }
         case .error(let error):
-            print(error)
+            showAlert(title: "Error", message: error.localizedDescription)
         }
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()

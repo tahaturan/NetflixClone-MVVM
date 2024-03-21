@@ -35,6 +35,7 @@ class DiscoverViewController: UIViewController {
         tableView.dataSource = self
     }
 }
+//MARK: - Helper
 extension DiscoverViewController {
     private func setupUI() {
         view.backgroundColor = .viewBackround
@@ -60,7 +61,7 @@ extension DiscoverViewController {
     }
 }
 
-//MARK: -
+//MARK: - UITableView  Delegate/DataSource
 extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryList.count
