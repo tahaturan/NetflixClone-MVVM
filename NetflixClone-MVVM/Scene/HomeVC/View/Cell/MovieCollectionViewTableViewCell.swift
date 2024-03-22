@@ -74,4 +74,17 @@ extension MovieCollectionViewTableViewCell: UICollectionViewDelegate, UICollecti
         let movie = movieList[indexPath.row]
         self.delegate?.didSelectMovie(movie)
     }
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(actionProvider:  { _ in
+            let downloadAction = UIAction(title: "Download", image: AppIcon.download.image()) { action in
+                //TODO: Dowload islemleri yapilacak Realm Veritabani eklendikten sonra
+            }
+            let sharedAction = UIAction(title: "Shared", image: AppIcon.share.image()) { action in
+                //TODO: palasma islemleri yapilacak DeepLink olarak link kopyalama
+            }
+            
+            return UIMenu(children: [downloadAction, sharedAction])
+        })
+        return config
+    }
 }
