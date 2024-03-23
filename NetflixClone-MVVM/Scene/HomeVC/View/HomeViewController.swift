@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     private var trendingMoviesList: [MovieResult] = []
     private var upcomingMoviesList: [MovieResult] = []
     private var topRatedList: [MovieResult] = []
+    private var isNotificationPermisson: Bool = false // bildirim onayi
     // MARK: - UICompenents
 
     private lazy var backroundImageView: UIImageView = {
@@ -49,7 +50,7 @@ class HomeViewController: UIViewController {
         homeViewModel?.delegate = self
         homeViewModel?.loadData()
         searchButton.delegate = self
-        
+        notificationPermisson()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -210,6 +211,17 @@ extension HomeViewController: MovieCollectionViewTableViewCellDelagate {
     
     func downloadActinClicked(_ movie: MovieResult) {
         homeViewModel?.saveMovieRealm(with: movie)
+        if isNotificationPermisson {
+            let notificationContent = UNMutableNotificationContent()
+            notificationContent.title = "Dowload is Succesfull"
+            notificationContent.body = "\(movie.title ?? "") is Downloaded"
+            notificationContent.badge = 1
+            notificationContent.sound = .default
+            
+            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+            let notificationRequest = UNNotificationRequest(identifier: "dowload", content: notificationContent, trigger: notificationTrigger)
+            UNUserNotificationCenter.current().add(notificationRequest)
+        }
     }
 }
 //MARK: - HomeViewModel
@@ -247,5 +259,28 @@ extension HomeViewController: AppSearchButtonDelegate {
         let searchVC = SearchViewBuilder.makeSearchViewController()
         searchVC.navigationItem.backButtonTitle = ""
         navigationController?.pushViewController(searchVC, animated: true)
+    }
+}
+//MARK: - LocalNotification and UNUserNotificationCenterDelegate
+extension HomeViewController: UNUserNotificationCenterDelegate {
+    //Bildirim onayi
+    private func notificationPermisson() {
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, error in
+            self?.isNotificationPermisson = granted
+        }
+    }
+    //Uygulama acik iken
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .sound, .badge])
+    }
+    // bildirim secildiginde
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        do {
+            try await UNUserNotificationCenter.current().setBadgeCount(0)
+        } catch  {
+            showAlert(title: "Error", message: error.localizedDescription)
+        }
+        tabBarController?.selectedIndex = 3
     }
 }
