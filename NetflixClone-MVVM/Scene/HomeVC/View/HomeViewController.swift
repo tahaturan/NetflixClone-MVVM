@@ -7,6 +7,7 @@
 
 import SnapKit
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     // MARK: - Properties
@@ -18,7 +19,6 @@ class HomeViewController: UIViewController {
     private var trendingMoviesList: [MovieResult] = []
     private var upcomingMoviesList: [MovieResult] = []
     private var topRatedList: [MovieResult] = []
-    
     // MARK: - UICompenents
 
     private lazy var backroundImageView: UIImageView = {
@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
         homeViewModel?.delegate = self
         homeViewModel?.loadData()
         searchButton.delegate = self
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -200,11 +201,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
 }
-//MARK: -
+//MARK: - MovieCollectionViewTableViewCellDelagate
 extension HomeViewController: MovieCollectionViewTableViewCellDelagate {
     func didSelectMovie(_ movie: MovieResult) {
         let detailVC = DetailViewBuilder.makeDetailViewController(movieID: movie.id ?? 178)
         navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    func downloadActinClicked(_ movie: MovieResult) {
+        homeViewModel?.saveMovieRealm(with: movie)
     }
 }
 //MARK: - HomeViewModel

@@ -39,6 +39,10 @@
 		5F0778292BAB13F300FBA7E2 /* DetailViewModelContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778282BAB13F300FBA7E2 /* DetailViewModelContracts.swift */; };
 		5F07782B2BAB170600FBA7E2 /* DetailViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07782A2BAB170600FBA7E2 /* DetailViewBuilder.swift */; };
 		5F07782D2BAC320B00FBA7E2 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07782C2BAC320B00FBA7E2 /* ViewController+Extension.swift */; };
+		5F0778302BAD81ED00FBA7E2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5F07782F2BAD81ED00FBA7E2 /* Realm */; };
+		5F0778322BAD81ED00FBA7E2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5F0778312BAD81ED00FBA7E2 /* RealmSwift */; };
+		5F0778352BAD85C700FBA7E2 /* RealmMovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778342BAD85C700FBA7E2 /* RealmMovieObject.swift */; };
+		5F0778372BAD898200FBA7E2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0778362BAD898200FBA7E2 /* RealmService.swift */; };
 		5F4B7D362B8C0A340004354D /* AppSearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D352B8C0A340004354D /* AppSearchButton.swift */; };
 		5F4B7D3B2B8C15410004354D /* MovieCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */; };
 		5FB688B72B79BA1400BBD98D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB688B62B79BA1400BBD98D /* AppDelegate.swift */; };
@@ -108,6 +112,8 @@
 		5F0778282BAB13F300FBA7E2 /* DetailViewModelContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelContracts.swift; sourceTree = "<group>"; };
 		5F07782A2BAB170600FBA7E2 /* DetailViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewBuilder.swift; sourceTree = "<group>"; };
 		5F07782C2BAC320B00FBA7E2 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		5F0778342BAD85C700FBA7E2 /* RealmMovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMovieObject.swift; sourceTree = "<group>"; };
+		5F0778362BAD898200FBA7E2 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		5F4B7D352B8C0A340004354D /* AppSearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchButton.swift; sourceTree = "<group>"; };
 		5F4B7D3A2B8C15410004354D /* MovieCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NetflixClone-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0778322BAD81ED00FBA7E2 /* RealmSwift in Frameworks */,
+				5F0778302BAD81ED00FBA7E2 /* Realm in Frameworks */,
 				5F0777E92B996D0500FBA7E2 /* SDWebImage in Frameworks */,
 				5FB6890C2B79CEA200BBD98D /* SnapKit in Frameworks */,
 			);
@@ -227,6 +235,14 @@
 				5F0778222BAB05CD00FBA7E2 /* CustomToolbar.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		5F0778332BAD85A600FBA7E2 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5F0778342BAD85C700FBA7E2 /* RealmMovieObject.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		5F4B7D342B8C0A190004354D /* Views */ = {
@@ -334,6 +350,7 @@
 			children = (
 				5F0777DB2B98146300FBA7E2 /* NetworkConstants.swift */,
 				5F0777DD2B98187A00FBA7E2 /* NetworkCaller.swift */,
+				5F0778362BAD898200FBA7E2 /* RealmService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -341,6 +358,7 @@
 		5FB688EA2B79BABF00BBD98D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F0778332BAD85A600FBA7E2 /* Storage */,
 				5F0777E12B981F3800FBA7E2 /* MovieModel.swift */,
 				5F0778022BA013CE00FBA7E2 /* MovieCategoryModel.swift */,
 				5F07781F2BA6F37100FBA7E2 /* MovieDetailModel.swift */,
@@ -507,6 +525,8 @@
 			packageProductDependencies = (
 				5FB6890B2B79CEA200BBD98D /* SnapKit */,
 				5F0777E82B996D0500FBA7E2 /* SDWebImage */,
+				5F07782F2BAD81ED00FBA7E2 /* Realm */,
+				5F0778312BAD81ED00FBA7E2 /* RealmSwift */,
 			);
 			productName = "NetflixClone-MVVM";
 			productReference = 5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */;
@@ -583,6 +603,7 @@
 			packageReferences = (
 				5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5F0777E72B996D0500FBA7E2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				5F07782E2BAD81ED00FBA7E2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 5FB688B42B79BA1400BBD98D /* Products */;
 			projectDirPath = "";
@@ -627,8 +648,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F0778072BA28C7F00FBA7E2 /* SearchedCollectionViewCell.swift in Sources */,
+				5F0778352BAD85C700FBA7E2 /* RealmMovieObject.swift in Sources */,
 				5F0778232BAB05CD00FBA7E2 /* CustomToolbar.swift in Sources */,
 				5F0777FA2B9D857300FBA7E2 /* UpComingViewModel.swift in Sources */,
+				5F0778372BAD898200FBA7E2 /* RealmService.swift in Sources */,
 				5FB689092B79C6DE00BBD98D /* AppIcon.swift in Sources */,
 				5F0778202BA6F37100FBA7E2 /* MovieDetailModel.swift in Sources */,
 				5FB689062B79C61400BBD98D /* DiscoverViewController.swift in Sources */,
@@ -1015,6 +1038,14 @@
 				minimumVersion = 5.19.0;
 			};
 		};
+		5F07782E2BAD81ED00FBA7E2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1030,6 +1061,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5F0777E72B996D0500FBA7E2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		5F07782F2BAD81ED00FBA7E2 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F07782E2BAD81ED00FBA7E2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		5F0778312BAD81ED00FBA7E2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F07782E2BAD81ED00FBA7E2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		5FB6890B2B79CEA200BBD98D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

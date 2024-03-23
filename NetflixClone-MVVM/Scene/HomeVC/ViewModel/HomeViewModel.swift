@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class HomeViewModel: HomeViewModelContracts {
     
     weak var delegate: HomeViewModelDelegate?
     var service: NetworkServiceProtocol
+    var realmService: RealmService = RealmService()
     
     init(service: NetworkServiceProtocol) {
         self.service = service
@@ -81,5 +83,7 @@ final class HomeViewModel: HomeViewModelContracts {
     func setLoading(_ isLoading: Bool) {
         self.delegate?.handleOutput(.setLoading(isLoading))
     }
-
+    func saveMovieRealm(with movie: MovieResult) {
+        realmService.addMovie(movie: movie)
+    }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 protocol MovieCollectionViewTableViewCellDelagate: AnyObject {
     func didSelectMovie(_ movie: MovieResult)
+    func downloadActinClicked(_ movie: MovieResult)
 }
 
 class MovieCollectionViewTableViewCell: UITableViewCell {
@@ -76,9 +77,14 @@ extension MovieCollectionViewTableViewCell: UICollectionViewDelegate, UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
         let config = UIContextMenuConfiguration(actionProvider:  { _ in
-            let downloadAction = UIAction(title: "Download", image: AppIcon.download.image()) { action in
-                //TODO: Dowload islemleri yapilacak Realm Veritabani eklendikten sonra
+            let downloadAction = UIAction(title: "Download", image: AppIcon.download.image()) { [weak self] action in
+                if let indexPath = indexPaths.first {
+                    if let movie = self?.movieList[indexPath.row] {
+                        self?.delegate?.downloadActinClicked(movie)
+                    }
+                }
             }
+            
             let sharedAction = UIAction(title: "Shared", image: AppIcon.share.image()) { action in
                 //TODO: palasma islemleri yapilacak DeepLink olarak link kopyalama
             }

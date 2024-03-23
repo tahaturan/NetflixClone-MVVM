@@ -49,3 +49,29 @@ struct MovieResult: Codable {
         case name
     }
 }
+//MARK: - Realm Convert
+extension MovieResult {
+    func toRealmMovie(completion: @escaping(RealmMovieObject) -> Void) {
+        let realmMovie = RealmMovieObject()
+        guard let movieID = self.id, let movieTitle = self.title, let movieImageURL = self.posterPath else { return }
+        realmMovie.movieID = movieID
+        realmMovie.title = movieTitle
+        let imageURL = "https://image.tmdb.org/t/p/w500\(movieImageURL)"
+        downloadImageData(urlString: imageURL) { data in
+            DispatchQueue.main.async {
+                realmMovie.movieImage = data
+                completion(realmMovie)
+            }
+        }
+    }
+    
+    private func downloadImageData(urlString: String, comletion: @escaping(Data) -> Void) {
+        guard let url = URL(string: urlString) else { return }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            comletion(data)
+        }
+        task.resume()
+    }
+}
