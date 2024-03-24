@@ -72,4 +72,9 @@ class UpComingTableViewCell: UITableViewCell {
         posterImageView.sd_setImage(with: imageURL)
         titleLabel.text = movieTitle
     }
+    func configureCell(realmMovie: RealmMovieObject) {
+        guard let imageData = realmMovie.movieImage else { return  }
+        titleLabel.text = realmMovie.title
+        posterImageView.image = UIImage(data: imageData)
+    }
 }

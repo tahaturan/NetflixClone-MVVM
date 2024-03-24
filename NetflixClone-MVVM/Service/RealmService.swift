@@ -25,8 +25,8 @@ class RealmService {
         }
     }
     //get movies to realm
-    func getMoviesRealm() -> Results<RealmMovieObject> {
-        return realm.objects(RealmMovieObject.self)
+    func getMoviesRealm() -> [RealmMovieObject] {
+        return Array(realm.objects(RealmMovieObject.self))
     }
     
     //delete movie to realm
