@@ -64,6 +64,9 @@
 		5FB689062B79C61400BBD98D /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB689052B79C61400BBD98D /* DiscoverViewController.swift */; };
 		5FB689092B79C6DE00BBD98D /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB689082B79C6DE00BBD98D /* AppIcon.swift */; };
 		5FB6890C2B79CEA200BBD98D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5FB6890B2B79CEA200BBD98D /* SnapKit */; };
+		5FD2018C2BB1A47C00D13B14 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5FD2018B2BB1A47C00D13B14 /* Reachability */; };
+		5FD2018E2BB1A49C00D13B14 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2018D2BB1A49C00D13B14 /* ReachabilityManager.swift */; };
+		5FD201902BB1A8C600D13B14 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2018F2BB1A8C600D13B14 /* Notification+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +144,8 @@
 		5FB689012B79BC5E00BBD98D /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		5FB689052B79C61400BBD98D /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		5FB689082B79C6DE00BBD98D /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		5FD2018D2BB1A49C00D13B14 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		5FD2018F2BB1A8C600D13B14 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +155,7 @@
 			files = (
 				5F0778322BAD81ED00FBA7E2 /* RealmSwift in Frameworks */,
 				5F0778302BAD81ED00FBA7E2 /* Realm in Frameworks */,
+				5FD2018C2BB1A47C00D13B14 /* Reachability in Frameworks */,
 				5F0777E92B996D0500FBA7E2 /* SDWebImage in Frameworks */,
 				5FB6890C2B79CEA200BBD98D /* SnapKit in Frameworks */,
 			);
@@ -356,6 +362,7 @@
 		5FB688E82B79BAA300BBD98D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				5FD2018D2BB1A49C00D13B14 /* ReachabilityManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 			children = (
 				5F0777D52B95772D00FBA7E2 /* Screen+Extension.swift */,
 				5F07782C2BAC320B00FBA7E2 /* ViewController+Extension.swift */,
+				5FD2018F2BB1A8C600D13B14 /* Notification+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -544,6 +552,7 @@
 				5F0777E82B996D0500FBA7E2 /* SDWebImage */,
 				5F07782F2BAD81ED00FBA7E2 /* Realm */,
 				5F0778312BAD81ED00FBA7E2 /* RealmSwift */,
+				5FD2018B2BB1A47C00D13B14 /* Reachability */,
 			);
 			productName = "NetflixClone-MVVM";
 			productReference = 5FB688B32B79BA1400BBD98D /* NetflixClone-MVVM.app */;
@@ -621,6 +630,7 @@
 				5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5F0777E72B996D0500FBA7E2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				5F07782E2BAD81ED00FBA7E2 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				5FD2018A2BB1A47C00D13B14 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			productRefGroup = 5FB688B42B79BA1400BBD98D /* Products */;
 			projectDirPath = "";
@@ -682,6 +692,7 @@
 				5F0777EF2B9AEDC800FBA7E2 /* HomeSectionTableView.swift in Sources */,
 				5F0778102BA3FD3900FBA7E2 /* SearchResultsViewController.swift in Sources */,
 				5FB688B92B79BA1400BBD98D /* SceneDelegate.swift in Sources */,
+				5FD201902BB1A8C600D13B14 /* Notification+Extension.swift in Sources */,
 				5F0777E02B981DEE00FBA7E2 /* HomeViewModelContracts.swift in Sources */,
 				5F0778032BA013CE00FBA7E2 /* MovieCategoryModel.swift in Sources */,
 				5FB688F72B79BB6700BBD98D /* HomeViewModel.swift in Sources */,
@@ -708,6 +719,7 @@
 				5F0777E42B9942C500FBA7E2 /* HomeHeaderFooterView.swift in Sources */,
 				5F0778132BA5D82E00FBA7E2 /* SearchViewModelContracts.swift in Sources */,
 				5F0777DE2B98187A00FBA7E2 /* NetworkCaller.swift in Sources */,
+				5FD2018E2BB1A49C00D13B14 /* ReachabilityManager.swift in Sources */,
 				5F0777ED2B9AE59300FBA7E2 /* MovieCollectionViewCell.swift in Sources */,
 				5F0777DC2B98146300FBA7E2 /* NetworkConstants.swift in Sources */,
 				5FB0E3CF2BAFB78B00342AC6 /* DownloadViewBuilder.swift in Sources */,
@@ -1074,6 +1086,14 @@
 				minimumVersion = 5.7.0;
 			};
 		};
+		5FD2018A2BB1A47C00D13B14 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1096,6 +1116,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5FB6890A2B79CEA200BBD98D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		5FD2018B2BB1A47C00D13B14 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FD2018A2BB1A47C00D13B14 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     //MARK: - Properties
     var detailViewModel: DetailViewModel?
+    private var networkStatus: ReachabilityStatus?
     //MARK: - UIComponents
     private lazy var backroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -73,8 +74,10 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupLayout()
+        addSelector()
         detailViewModel?.delegate = self
         detailViewModel?.getMovieDetail()
+        ReachabilityManager.shared.delegate = self
     }
 }
 //MARK: - Helper
@@ -154,6 +157,9 @@ extension DetailViewController {
             make.leading.trailing.equalToSuperview().inset(15)
         }
     }
+    private func addSelector() {
+        playButton.addTarget(self, action: #selector(playButtonTapped(_:)), for: .touchUpInside)
+    }
     private func stringToDate(dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -201,8 +207,54 @@ extension DetailViewController: DetailViewModelDelegate {
             }
         }
     }
-    
-    
+}
+//MARK: - ReachabilityManagerDelegate
+extension DetailViewController: ReachabilityManagerDelegate {
+    func networkStatusDidChange(to status: ReachabilityStatus) {
+        switch status {
+        case .disconnected:
+            networkStatus = .disconnected
+            DispatchQueue.main.async {
+                self.showAlert(title: "Connection Error", message: "no Internet connection")
+                self.playButton.isEnabled = false
+            }
+        case .connectedViaWifi:
+            networkStatus = .connectedViaWifi
+            DispatchQueue.main.async {
+                self.playButton.isEnabled = true
+            }
+        case .connectedViaCellular:
+            networkStatus = .connectedViaCellular
+            DispatchQueue.main.async {
+                self.playButton.isEnabled = true
+            }
+        }
+    }
+}
+//MARK: - Selector
+extension DetailViewController {
+    @objc private func playButtonTapped(_ sender: UIButton) {
+        switch networkStatus {
+        case .connectedViaCellular:
+            DispatchQueue.main.async {
+                self.showAlert(title: "Warning", message: "You are in cellular data.")
+                self.playButton.isEnabled = true
+            }
+        case .connectedViaWifi:
+            DispatchQueue.main.async {
+                self.showAlert(title: "Succesfull", message: "you can start watching")
+                self.playButton.isEnabled = true
+            }
+        case .disconnected:
+            DispatchQueue.main.async {
+                self.showAlert(title: "Connection Error", message: "no Internet connection")
+                self.playButton.isEnabled = false
+            }
+
+        case .none:
+            print("none")
+        }
+    }
 }
 //MARK: - FactoryMethods
 extension DetailViewController {
