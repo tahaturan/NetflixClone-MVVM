@@ -7,7 +7,6 @@
 - **MVVM Mimarisine ve Protocol-Oriented Programlamaya Uygun**: Temiz kod prensiplerine uygun şekilde MVVM mimarisi ile ve protocol-oriented programlama yaklaşımı kullanılarak geliştirilmiştir. Sayfalar arası haberleşme için delegasyon işlemleri kullanılmaktadır.
 - **Generic Network Layer**: Veri alışverişini kolaylaştıran ve yeniden kullanılabilir bir network katmanı.
 - **Dependency Injection**: Bağımlılıkların yönetimi için dependency injection yapısı kullanılmıştır.
-- **Realm ile Veri Yönetimi**: Favori dizi ve filmlerinizi cihazınızda kolayca saklayıp yönetebilirsiniz.
 - **Offline İzleme**: Realm kullanılarak gerçekleştirilen download işlemi ile dizi ve filmleri çevrimdışı izleyebilme.
 - **Film Paylaşımı**: Deep Link desteği ile arkadaşlarınızla dizi ve film paylaşabilirsiniz. Paylaşılan link üzerinden doğrudan ilgili içeriğin detay sayfasına erişilebilir.
 - **Network Kontrolü**: Reachability paketi ile internet bağlantısının durumu sürekli olarak kontrol edilir. Ağ bağlantısı kesildiğinde kullanıcıya bildirim gösterilir. Hücresel veri üzerinden film oynatılmak istendiğinde kullanıcıya uyarı verilir.
