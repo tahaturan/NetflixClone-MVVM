@@ -26,7 +26,7 @@ https://github.com/tahaturan/NetflixClone-MVVM/assets/94213149/f087d1b4-53b2-43f
 
 | Home | Home | Home |
 |-------------------|-------------------|-------------------|
-| <img src="Images/home.png" width="300"> | <img src="Images/home2.png" width="300"> | <img src="Images/home3.jpeg" width="300"> |
+| <img src="Images/home.png" width="300"> | <img src="Images/home2.png" width="300"> | <img src="Images/Home3.jpeg" width="300"> |
 
 | Search | Search | Search |
 |-------------------|-------------------|-------------------|
@@ -38,7 +38,7 @@ https://github.com/tahaturan/NetflixClone-MVVM/assets/94213149/f087d1b4-53b2-43f
 
 | Download | Shared | Home |
 |-------------------|-------------------|-------------------|
-| <img src="Images/download.png" width="300"> | <img src="Images/home3.jpeg" width="300"> | <img src="Images/shared.jpeg" width="300"> |
+| <img src="Images/download.png" width="300"> | <img src="Images/Home3.jpeg" width="300"> | <img src="Images/shared.jpeg" width="300"> |
 
 | No connection | No connection | Cellular |
 |-------------------|-------------------|-------------------|
