@@ -38,10 +38,10 @@ https://github.com/tahaturan/NetflixClone-MVVM/assets/94213149/f087d1b4-53b2-43f
 
 | Download | Shared | Home |
 |-------------------|-------------------|-------------------|
-| <img src="Images/download.png" width="300"> | <img src="Images/Home3.jpeg" width="300"> | <img src="Images/shared.jpeg" width="300"> |
+| <img src="Images/Download.png" width="300"> | <img src="Images/Home3.jpeg" width="300"> | <img src="Images/shared.jpeg" width="300"> |
 
 | No connection | No connection | Cellular |
 |-------------------|-------------------|-------------------|
-| <img src="Images/noConnection2.png" width="300"> | <img src="Images/noConnection.png" width="300"> | <img src="Images/cellular.png" width="300"> |
+| <img src="Images/noConnection2.PNG" width="300"> | <img src="Images/noConnection.PNG" width="300"> | <img src="Images/cellular1.PNG" width="300"> |
 
 <hr>
