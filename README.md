@@ -18,9 +18,9 @@
 - **SDWebImage**: Resimleri asenkron bir şekilde indirme ve önbelleğe alma.
 - **Reachability.swift**: Ağ bağlantı durumunu kontrol etme.
 - **SnapKit**: Kod ile kullanıcı arayüzü düzenini kolaylaştıran bir Auto Layout kütüphanesi.
-<hr>
+
 https://github.com/tahaturan/NetflixClone-MVVM/assets/94213149/f087d1b4-53b2-43ff-b9ad-39fb40b8e67d
-<hr>
+
 # Uygulama Görüntüleri
 
 | Home | Home | Home |
