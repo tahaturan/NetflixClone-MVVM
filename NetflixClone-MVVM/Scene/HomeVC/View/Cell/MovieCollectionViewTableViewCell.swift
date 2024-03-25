@@ -10,6 +10,7 @@ import UIKit
 protocol MovieCollectionViewTableViewCellDelagate: AnyObject {
     func didSelectMovie(_ movie: MovieResult)
     func downloadActinClicked(_ movie: MovieResult)
+    func sharedActionCliced(url: URL)
 }
 
 class MovieCollectionViewTableViewCell: UITableViewCell {
@@ -76,17 +77,21 @@ extension MovieCollectionViewTableViewCell: UICollectionViewDelegate, UICollecti
         self.delegate?.didSelectMovie(movie)
     }
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
-        let config = UIContextMenuConfiguration(actionProvider:  { _ in
+        let config = UIContextMenuConfiguration(actionProvider: { _ in
+            guard let indexPath = indexPaths.first else { return nil }
+            let movie = self.movieList[indexPath.row]
+
             let downloadAction = UIAction(title: "Download", image: AppIcon.download.image()) { [weak self] action in
-                if let indexPath = indexPaths.first {
-                    if let movie = self?.movieList[indexPath.row] {
-                        self?.delegate?.downloadActinClicked(movie)
-                    }
-                }
+
+                self?.delegate?.downloadActinClicked(movie)
             }
             
             let sharedAction = UIAction(title: "Shared", image: AppIcon.share.image()) { action in
                 //TODO: palasma islemleri yapilacak DeepLink olarak link kopyalama
+                guard let movieID = movie.id else { return }
+                guard let url = URL(string: "netflixclone://movie?id=\(movieID)") else { return }
+                
+                self.delegate?.sharedActionCliced(url: url)
             }
             
             return UIMenu(children: [downloadAction, sharedAction])

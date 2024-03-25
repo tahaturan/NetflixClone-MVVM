@@ -223,6 +223,10 @@ extension HomeViewController: MovieCollectionViewTableViewCellDelagate {
             UNUserNotificationCenter.current().add(notificationRequest)
         }
     }
+    func sharedActionCliced(url: URL) {
+        let shareSheedVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        present(shareSheedVC, animated: true)
+    }
 }
 //MARK: - HomeViewModel
 extension HomeViewController: HomeViewModelDelegate{
