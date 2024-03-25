@@ -19,7 +19,9 @@
 - **Reachability.swift**: Ağ bağlantı durumunu kontrol etme.
 - **SnapKit**: Kod ile kullanıcı arayüzü düzenini kolaylaştıran bir Auto Layout kütüphanesi.
 
+
 https://github.com/tahaturan/NetflixClone-MVVM/assets/94213149/f087d1b4-53b2-43ff-b9ad-39fb40b8e67d
+
 
 # Uygulama Görüntüleri
 
