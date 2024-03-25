@@ -8,8 +8,9 @@
 - **Generic Network Layer**: Veri alışverişini kolaylaştıran ve yeniden kullanılabilir bir network katmanı.
 - **Dependency Injection**: Bağımlılıkların yönetimi için dependency injection yapısı kullanılmıştır.
 - **Offline İzleme**: Realm kullanılarak gerçekleştirilen download işlemi ile dizi ve filmleri çevrimdışı izleyebilme.
-- **Film Paylaşımı**: Deep Link desteği ile arkadaşlarınızla dizi ve film paylaşabilirsiniz. Paylaşılan link üzerinden doğrudan ilgili içeriğin detay sayfasına erişilebilir.
+- **Film Paylaşımı(Deep Link)**: Deep Link desteği ile arkadaşlarınızla dizi ve film paylaşabilirsiniz. Paylaşılan link üzerinden doğrudan ilgili içeriğin detay sayfasına erişilebilir.
 - **Network Kontrolü**: Reachability paketi ile internet bağlantısının durumu sürekli olarak kontrol edilir. Ağ bağlantısı kesildiğinde kullanıcıya bildirim gösterilir. Hücresel veri üzerinden film oynatılmak istendiğinde kullanıcıya uyarı verilir.
+- **Bildirimler**: `NotificationCenter.default` kullanarak, film indirme işlemi tamamlandığında kullanıcıya otomatik bildirimler gönderilir.
 
 ## Kullanılan Paketler
 
